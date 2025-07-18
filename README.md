@@ -1,8 +1,8 @@
 # Task 1
-Ask the user to enter the first number and convert it to an integer using int()
+Ask the user to enter the first number and convert it to an integer using int()  
 a = int(input("Enter the First number: "))
 
-Ask the user to enter the second number and convert it to an integer
+Ask the user to enter the second number and convert it to an integer  
 b = int(input("Enter the Second number: "))
 
 Print the result of the addition
