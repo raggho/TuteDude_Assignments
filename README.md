@@ -1,30 +1,24 @@
 # Task 1
-Ask the user to enter the first number and convert it to an integer using int()  
-a = int(input("Enter the First number: "))
+# Ask the user to enter a number and convert the input string to an integer  
+n = int(input("Enter a number: "))
 
-Ask the user to enter the second number and convert it to an integer  
-b = int(input("Enter the Second number: "))
-
-Print the result of the addition  
-print("Addition: ", a + b)          Adds a and b, then prints the result
-
-Print the result of the subtraction  
-print("Subtraction: ", a - b)       Subtracts b from a, then prints the result
-
-Print the result of the multiplication  
-print("Multiplication: ", a * b)             Multiplies a and b, then prints the result
-
-Print the result of the division  
-print("Division: ", a / b)              Divides a by b, then prints the result (returns float)
+# Check if the number is even using the modulo operator (%)  
+if n % 2 == 0:
+    # If the remainder when n is divided by 2 is 0, then it's even
+    print(f"{n} is an even number")
+else:
+    # If the remainder is not 0, then it's odd
+    print(f"{n} is an odd number")
 
 
 # Task 2
 
-Prompt the user to enter their first name and store it in the variable 'f_name'  
-f_name = input("Enter the first name: ")
+# Initialize a variable 'sum' to 0. This will store the running total.
+sum = 0
 
-Prompt the user to enter their second (last) name and store it in the variable 's_name'  
-s_name = input("Enter the Second name: ")
+# Use a for loop to iterate over the numbers from 1 to 50 (inclusive)  
+for i in range(1, 51):  # range(1, 51) generates numbers from 1 to 50
+    sum += i            # Add the current number 'i' to the sum
 
-Use an f-string to display a welcome message including the user's full name  
-print(f"Hello, {f_name} {s_name}! welcome to the python program.")
+# After the loop ends, print the total sum  
+print(f"The sum of numbers from 1 to 50 is:", sum)
