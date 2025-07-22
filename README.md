@@ -1,24 +1,35 @@
 # Task 1
-Ask the user to enter a number and convert the input string to an integer  
-n = int(input("Enter a number: "))  
+Define a function to calculate factorial  
+def factorial(n):  
+    If the number is greater than 1, calculate factorial using a loop  
+    if n > 1:  
+        fact = 1                  Initialise factorial variable to 1  
+        for i in range(1, n + 1):        Loop from 1 to n (inclusive)  
+            fact *= i            Multiply fact by the current number i  
+    else:  
+        fact = 1                 If n is 0 or 1, factorial is 1 by definition  
 
-Check if the number is even using the modulo operator (%)  
-if n % 2 == 0:  
-    If the remainder when n is divided by 2 is 0, then it's even  
-    print(f"{n} is an even number")  
-else:  
-    If the remainder is not 0, then it's odd  
-    print(f"{n} is an odd number")  
+    Return the result as a formatted string  
+    return f"Factorial of {n} is : {fact}"  
+
+Ask the user to enter a number, call the function, and print the result  
+print(factorial(int(input("Enter the number: "))))  
+ 
 
 
 # Task 2
 
-Initialize a variable 'sum' to 0. This will store the running total.  
-sum = 0  
+Import the math module to access mathematical functions  
+import math  
 
-Use a for loop to iterate over the numbers from 1 to 50 (inclusive)    
-for i in range(1, 51):  range(1, 51) generates numbers from 1 to 50  
-    sum += i            Add the current number 'i' to the sum  
+Define a function that performs square root, log, and sine operations  
+def Calc(n):  
+    squrt = math.sqrt(n)      Calculate square root of n  
+    loga = math.log(n)        Calculate natural logarithm (base e) of n  
+    sine = math.sin(n)        Calculate sine of n (n in radians)  
+    
+    Return the results as a formatted string  
+    return f"Square root: {squrt} \nLogarithm: {loga} \nSine: {sine}"  
 
-After the loop ends, print the total sum    
-print(f"The sum of numbers from 1 to 50 is:", sum)  
+Get input from the user, convert it to an integer, and print the result  
+print(Calc(int(input("Enter the number: "))))  
