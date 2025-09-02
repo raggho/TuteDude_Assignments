@@ -1,35 +1,53 @@
-# Task 1
-Define a function to calculate factorial  
-def factorial(n):  
-    If the number is greater than 1, calculate factorial using a loop  
-    if n > 1:  
-        fact = 1                  Initialise factorial variable to 1  
-        for i in range(1, n + 1):        Loop from 1 to n (inclusive)  
-            fact *= i            Multiply fact by the current number i  
-    else:  
-        fact = 1                 If n is 0 or 1, factorial is 1 by definition  
+def write_and_append_file(filename):
+    try:
+        # Step 1: Take user input and write it to the file (overwrite if exists)
+        user_input = input("Enter text to write into the file: ")
+        with open(filename, "w") as file:  # "w" mode = write
+            file.write(user_input + "\n")
 
-    Return the result as a formatted string  
-    return f"Factorial of {n} is : {fact}"  
+        # Step 2: Take additional input and append it to the same file
+        more_input = input("Enter additional text to append: ")
+        with open(filename, "a") as file:  # "a" mode = append
+            file.write(more_input + "\n")
 
-Ask the user to enter a number, call the function, and print the result  
-print(factorial(int(input("Enter the number: "))))  
- 
+        # Step 3: Read and display the final content of the file
+        print("\nFinal content of the file:")
+        with open(filename, "r") as file:  # "r" mode = read
+            for line in file:
+                print(line.strip())
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 
-# Task 2
+if __name__ == "__main__":
+    write_and_append_file("output.txt")
 
-Import the math module to access mathematical functions  
-import math  
 
-Define a function that performs square root, log, and sine operations  
-def Calc(n):  
-    squrt = math.sqrt(n)      Calculate square root of n  
-    loga = math.log(n)        Calculate natural logarithm (base e) of n  
-    sine = math.sin(n)        Calculate sine of n (n in radians)  
-    
-    Return the results as a formatted string  
-    return f"Square root: {squrt} \nLogarithm: {loga} \nSine: {sine}"  
+def write_and_append_multiple(filename):
+    try:
+        # Step 1: First input overwrites/creates the file
+        user_input = input("Enter text to write into the file: ")
+        with open(filename, "w") as file:  # "w" mode = write
+            file.write(user_input + "\n")
 
-Get input from the user, convert it to an integer, and print the result  
-print(Calc(int(input("Enter the number: "))))  
+        # Step 2: Keep asking for more input until user types 'exit'
+        while True:
+            more_input = input("Enter text to append (or type 'exit' to stop): ")
+            if more_input.lower() == "exit":
+                break
+            with open(filename, "a") as file:  # "a" mode = append
+                file.write(more_input + "\n")
+
+        # Step 3: Read and display the final content of the file
+        print("\nFinal content of the file:")
+        with open(filename, "r") as file:
+            for line in file:
+                print(line.strip())
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
+if __name__ == "__main__":
+    write_and_append_multiple("output.txt")
