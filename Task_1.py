@@ -1,9 +1,13 @@
-def factorial(n):
-    if n > 1:
-        fact = 1
-        for i in range(1,n+1):
-            fact *= i   
-    else:
-        fact = 1
-    return f"Factorial of {n} is : {fact}"
-print(factorial(int(input("Enter the number: "))))
+def read_file(filename):
+    try:
+        with open(filename, "r") as file:
+            for line in file:
+                print(line.strip()) 
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' does not exist.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+
+if __name__ == "__main__":
+    read_file("sample.txt")
