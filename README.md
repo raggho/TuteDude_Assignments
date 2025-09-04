@@ -1,53 +1,32 @@
-def write_and_append_file(filename):
-    try:
-        # Step 1: Take user input and write it to the file (overwrite if exists)
-        user_input = input("Enter text to write into the file: ")
-        with open(filename, "w") as file:  # "w" mode = write
-            file.write(user_input + "\n")
+#Task 1
+-Create a dictionary with student names as keys and their marks as values
+student_dict = {"alice": 85, "rajesh": 90, "ram": 100}
 
-        # Step 2: Take additional input and append it to the same file
-        more_input = input("Enter additional text to append: ")
-        with open(filename, "a") as file:  # "a" mode = append
-            file.write(more_input + "\n")
+-Take student name as input from the user
+Enter_name = input("Enter the Student's name: ")
 
-        # Step 3: Read and display the final content of the file
-        print("\nFinal content of the file:")
-        with open(filename, "r") as file:  # "r" mode = read
-            for line in file:
-                print(line.strip())
-
-    except Exception as e:
-        print(f"An error occurred: {e}")
+-Convert the entered name to lowercase and check if it exists in the dictionary
+if Enter_name.lower() in student_dict:
+   - If found, print the marks of that student
+    print(f"{Enter_name}'s marks: {student_dict[Enter_name.lower()]}")
+else:
+    -If not found, display a message
+    print("Student not found.")
 
 
-if __name__ == "__main__":
-    write_and_append_file("output.txt")
+#task 2
+-Create a list of numbers from 1 to 10
+list_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+-Initialize an empty list to store extracted elements
+list_2 = []
 
-def write_and_append_multiple(filename):
-    try:
-        # Step 1: First input overwrites/creates the file
-        user_input = input("Enter text to write into the file: ")
-        with open(filename, "w") as file:  # "w" mode = write
-            file.write(user_input + "\n")
+-Loop through the first half of list_1 (i.e., first 5 elements)
+for i in range(len(list_1) // 2):
+    list_2.append(list_1[i])  - Append each element to list_2
 
-        # Step 2: Keep asking for more input until user types 'exit'
-        while True:
-            more_input = input("Enter text to append (or type 'exit' to stop): ")
-            if more_input.lower() == "exit":
-                break
-            with open(filename, "a") as file:  # "a" mode = append
-                file.write(more_input + "\n")
+Print the extracted first five elements
+print(f"Extracted first five elements: {list_2}")
 
-        # Step 3: Read and display the final content of the file
-        print("\nFinal content of the file:")
-        with open(filename, "r") as file:
-            for line in file:
-                print(line.strip())
-
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-
-if __name__ == "__main__":
-    write_and_append_multiple("output.txt")
+Print the reversed version of the extracted elements
+print(f"Reversed extracted elements: {list_2[::-1]}")
