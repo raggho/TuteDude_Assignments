@@ -1,21 +1,7 @@
-def write_and_append_file(filename):
-    try:
-        user_input = input("Enter text to write into the file: ")
-        with open(filename, "w") as file:
-            file.write(user_input + "\n")
-            
-        more_input = input("Enter additional text to append: ")
-        with open(filename, "a") as file:
-            file.write(more_input + "\n")
-            
-        print("\nFinal content of the file:")
-        with open(filename, "r") as file:
-            for line in file:
-                print(line.strip())
+list_1 = [1,2,3,4,5,6,7,8,9,10]
+list_2 = []
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-
-if __name__ == "__main__":
-    write_and_append_file("output.txt")
+for i in range(len(list_1)//2):
+    list_2.append(list_1[i])
+print(f"Extracted first five elements: {list_2}")
+print(f"Reversed extracted elements: {list_2[::-1]}")
