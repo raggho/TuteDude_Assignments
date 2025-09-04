@@ -1,13 +1,8 @@
-def read_file(filename):
-    try:
-        with open(filename, "r") as file:
-            for line in file:
-                print(line.strip()) 
-    except FileNotFoundError:
-        print(f"Error: The file '{filename}' does not exist.")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+student_dict = {"alice":85, "rajesh":90, "ram":100}
 
+Enter_name = input("Enter the Student's name: ")
 
-if __name__ == "__main__":
-    read_file("sample.txt")
+if Enter_name.lower() in student_dict:
+    print(f"{Enter_name}'s marks: {student_dict[Enter_name.lower()]}")
+else:
+    print(f"Student not found.")
